@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yusuf Nashif — Cyber Security</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="design.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">Yusuf Nashif</div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <!-- LEFT: text content -->
+    <div class="hero-left">
+      <p class="hello">HELLO I'M</p>
+      <h1 class="name">YUSUF NASHIF</h1>
+      <p class="role">CYBER SECURITY EXPERT</p>
+
+      <p class="lead">
+        I specialize in cybersecurity, digital safety, and helping individuals and organizations protect
+        their data in an increasingly connected world. I help teams find and fix gaps before attackers do.
+      </p>
+
+      <a class="cta" href="aboutme.html">Get Started</a>
+    </div>
+
+    <!-- RIGHT: portrait image -->
+    <div class="hero-right" aria-hidden="true">
+      <div class="portrait-wrap">
+        <img src="images/profile.jpg" alt="Portrait of Yusuf Nashif" class="portrait" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional small contact anchor or more content could go here -->
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Yusuf Nashif</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
