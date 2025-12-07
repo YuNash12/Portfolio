@@ -222,47 +222,301 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 
 /* Portfolio Grid */
 /* Portfolio Grid - fixed 2x2 layout */
+/* ---- Portfolio: fixed 2x2 on desktop; stacked on small screens ---- */
+
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
-  gap: 40px;                             /* bigger gap between cards */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
 }
 
-/* Project Card - make bigger */
+/* Each card - parent container for the image wrapper */
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  height: 400px;         /* adjust for larger images */
+  height: 400px;                   /* desktop height */
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+  background: #0b1620;             /* fallback background while image loads */
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 400px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+  background: #0b1620;
+  outline: none;
 }
 
-/* Project Image - fill the card */
-.project-card img {
+/* Make the image wrapper fill the card exactly */
+.project-image-wrap {
+  position: absolute;
+  inset: 0;                         /* top:0; right:0; bottom:0; left:0; */
+  display: block;
+}
+
+/* Image fills the wrapper and always covers the area */
+.project-image-wrap img {
   width: 100%;
-  height: 100%;         /* fill the taller card */
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
+  filter: grayscale(70%) brightness(0.78);
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-/* Hover effect */
-.project-card:hover img {
-  transform: scale(1.05);
+.project-card:hover .project-image-wrap img,
+.project-card:focus-within .project-image-wrap img {
+  filter: none;
+  transform: scale(1.03);
 }
 
-/* Caption Rectangle */
+/* Slight zoom on hover */
+.project-card:hover .project-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* Caption sits on top of the image at the bottom of the card */
 .project-caption {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
   background-color: #06223A;
-  border-top: 3px solid black;
+  border-top: 3px solid #000;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 12px 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 60px; /* collapsed */
+  transition: height 0.35s cubic-bezier(.2,.8,.2,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.caption-inner {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
   text-align: center;
+}
+
+.caption-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.caption-desc {
+  font-size: 0.95rem;
+  color: #e6f0ff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+/* expansion on hover */
+.project-card:hover .project-caption,
+.project-card:focus-within .project-caption {
+  height: 140px;
+}
+
+.project-card:hover .caption-desc,
+.project-card:focus-within .caption-desc {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* ---------------------- */
+/* RESUME SECTION STYLING */
+/* ---------------------- */
+
+.resume-title {
+  text-align: center;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 36px 0 28px;
+}
+
+/* Layout: three cards with thick separators between them */
+/* grid columns: card - separator - card - separator - card */
+.resume-row {
+  display: grid;
+  grid-template-columns: 1fr 1in 1fr 1in 1fr;
+  gap: 0;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+/* thick separator (1 inch solid line) */
+.resume-sep {
+  width: 4px;
+  background: #00c07a;
+  height: 100%;
+  align-self: stretch;
+  justify-self: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00c07a, 0 0 18px #00c07a;
+}
+
+
+/* Individual "circled rectangle" card */
+.resume-card {
+  background: linear-gradient(180deg, rgba(6,34,52,0.9), rgba(4,23,36,0.8));
+  border-radius: 28px;
+  padding: 28px 22px 22px 22px;
+  position: relative;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.5);
+  min-height: 220px;
+  overflow: visible;
+}
+
+/* year bubble (small circle overlapping top-left inside card) */
+.year-bubble {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,10,14,0.6);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.year-bubble span {
+  color: var(--accent); /* #00C07A */
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+}
+
+/* Card content */
+.card-content {
+  padding-top: 8px;
+}
+
+/* Job title + employer */
+.job-title {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.employer {
+  color: var(--white);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  opacity: 0.98;
+}
+
+/* bullets */
+.resume-bullets {
+  margin-left: 1.1rem;
+  margin-top: 6px;
+  color: #dfeaf2;
+  line-height: 1.5;
+  list-style-type: disc;
+  padding-left: 0.85rem;
+  max-width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Skills long rounded rectangle */
+.skills-card {
+  margin-top: 12px;
+  background: linear-gradient(180deg, rgba(6,34,52,0.95), rgba(4,23,36,0.9));
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.skills-inner {
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.skills-title {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.skills-line {
+  color: #ffffff;
+  margin: 8px 0;
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+.skills-label {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* Responsive behavior: stack cards and hide separators on small screens */
+@media (max-width: 980px) {
+  .resume-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resume-sep {
+    display: none;
+  }
+
+  .resume-card {
+    padding: 20px;
+  }
+
+  .year-bubble {
+    top: -16px;
+    left: 14px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .resume-title { font-size: 2.6rem; }
+}
+
+/* Very narrow phones: tighten spacing */
+@media (max-width: 480px) {
+  .resume-title { font-size: 2.2rem; margin-top: 18px; }
+  .resume-card { padding: 18px; min-height: 180px; }
+  .skills-line { font-size: 0.95rem; }
+}
+
+
+/* ---- Responsive: one column & slightly shorter cards on small screens ---- */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;   /* stack to single column */
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  .project-card {
+    height: 300px;               /* reduce height for mobile */
+  }
+
+  .portfolio-title { font-size: 2.4rem; }
+  .portfolio-subtitle { font-size: 1rem; margin-bottom: 24px; }
+}
+@media (max-width: 480px) {
+  .screenshot { height: 140px; } /* or adjust aspect-ratio */
 }
 
