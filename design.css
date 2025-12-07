@@ -180,5 +180,89 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 .text-muted {
   color: #d9e9f9 !important;
 }
+.logo img {
+  height: 50px; /* adjust this to whatever works best */
+  width: auto;   /* keeps the aspect ratio correct *
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and name */
+}
 
+.logo-img {
+  height: 50px; /* same as before */
+  width: auto;
+}
+
+.logo-text {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+/* ---------------------- */
+/* PORTFOLIO PAGE STYLING */
+/* ---------------------- */
+
+.portfolio-title {
+  text-align: center;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.portfolio-subtitle {
+  text-align: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* Portfolio Grid */
+/* Portfolio Grid - fixed 2x2 layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 40px;                             /* bigger gap between cards */
+}
+
+/* Project Card - make bigger */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 400px;         /* adjust for larger images */
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+}
+
+/* Project Image - fill the card */
+.project-card img {
+  width: 100%;
+  height: 100%;         /* fill the taller card */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Caption Rectangle */
+.project-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #06223A;
+  border-top: 3px solid black;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 15px;
+  text-align: center;
+}
 

@@ -23,34 +23,42 @@
   </div>
 </header>
 
-  <main class="portfolio">
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <p class="text-muted">Examples of projects and reports.</p>
+ <main class="portfolio">
+  <div class="container">
+    <!-- Page Title -->
+    <h1 class="portfolio-title">PORTFOLIO</h1>
+    <p class="portfolio-subtitle">Projects to become the best</p>
 
-      <div class="portfolio-grid">
-        <div class="project-card">
-          <h3>Network Security Analyzer</h3>
-          <p>A tool that scans networks for vulnerabilities and recommends fixes.</p>
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="project-image-wrap">
+          <img src="privacydiagram.jpg" alt="Consolidated Privacy Diagram">
+          <div class="project-caption">Consolidated Privacy Diagram</div>
         </div>
+      </div>
 
-        <div class="project-card">
-          <h3>Phishing Awareness Training</h3>
-          <p>Interactive training module for end users and simulated tests.</p>
+      <div class="project-card">
+        <div class="project-image-wrap">
+          <img src="wireshark.jpg" alt="WireShark">
+          <div class="project-caption">WireShark</div>
         </div>
+      </div>
 
-        <div class="project-card">
-          <h3>Data Privacy Dashboard</h3>
-          <p>An interface to help users control and understand their data footprint.</p>
+      <div class="project-card">
+        <div class="project-image-wrap">
+          <img src="ai-misinformation.jpg" alt="AI & Misinformation Research">
+          <div class="project-caption">AI & Misinformation Research</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image-wrap">
+          <img src="vr-schizophrenia.jpg" alt="Virtual Reality & Schizophrenia Research">
+          <div class="project-caption">Virtual Reality & Schizophrenia Research</div>
         </div>
       </div>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container"><p>&copy; <span id="year2"></span> Yusuf Nashif</p></div>
-  </footer>
-
-  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
-</body>
+  </div>
+</main>
 </html>
