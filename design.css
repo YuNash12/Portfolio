@@ -494,6 +494,25 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   font-size: 0.95rem;
 }
 
+/* Buttons for Portfolio and Resume pages */
+.btn-portfolio,
+.btn-resume {
+  background-color: #00C07A;
+  color: black;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn-portfolio:hover,
+.btn-resume:hover {
+  opacity: 0.85;
+}
+
+
 /* Skills long rounded rectangle */
 .skills-card {
   margin-top: 12px;
