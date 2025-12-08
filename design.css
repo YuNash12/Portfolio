@@ -141,14 +141,19 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 @media (max-width:760px){
-  .container{ padding-left:20px; padding-right:20px; }
-  .hero-grid{ grid-template-columns: 1fr; gap:18px; }
-  .hero-right{ order: -1; justify-content:flex-end; margin-bottom:12px; }
-  .portrait{ max-width:300px; }
-  .name{ font-size:2.2rem; }
-  .role{ letter-spacing:1.5px; }
-  .main-nav ul{ display:none; } /* you can add a mobile menu later */
+  .main-nav ul{
+    display: flex;         /* show nav */
+    flex-direction: column; /* stack vertically */
+    gap: 12px;              /* spacing between links */
+    align-items: flex-start; /* optional, left-align links */
+  }
+
+  .main-nav li {
+    width: 100%;           /* full width for easier tap */
+    text-align: left;      /* optional */
+  }
 }
+
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
@@ -763,69 +768,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 @media (max-width: 480px) {
   .screenshot { height: 140px; } /* or adjust aspect-ratio */
 }
-/* Hamburger button */
-.nav-toggle {
-  display: none; /* hide by default on desktop */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 50; /* stay on top of other elements */
-  margin-left: 20px; /* optional spacing */
-}
 
-.nav-toggle .hamburger,
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-toggle .hamburger::before {
-  transform: translateY(-7px);
-}
-
-.nav-toggle .hamburger::after {
-  transform: translateY(4px);
-}
-
-/* Mobile menu */
-@media (max-width: 760px) {
-  .nav-toggle {
-    display: flex; /* show hamburger on mobile */
-  }
-
-  .main-nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;  /* center items horizontally */
-    background-color: var(--navy-2);
-    position: absolute;
-    top: 60px;  /* adjust based on header height */
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 10px 0;
-    z-index: 49;
-  }
-
-  .main-nav ul.show {
-    display: flex;
-  }
-
-  .main-nav li {
-    margin: 10px 0;  /* small vertical spacing */
-    width: 100%;     /* take full width for easier tap */
-    text-align: center;
-  }
-}
 
 .header {
   display: flex;
