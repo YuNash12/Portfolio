@@ -745,79 +745,9 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 @media (max-width: 480px) {
   .screenshot { height: 140px; } /* or adjust aspect-ratio */
 }
-/* Hamburger button for mobile */
+/* Hamburger button */
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-toggle .hamburger,
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  position: relative;
-}
-
-.nav-toggle .hamburger::before {
-  top: -7px;
-}
-
-.nav-toggle .hamburger::after {
-  top: 4px;
-}
-
-/* Show button on small screens */
-@media (max-width: 760px) {
-  .nav-toggle {
-    display: flex;
-  }
-
-  .main-nav ul {
-    display: none;  /* hide default menu */
-    flex-direction: column;
-    background-color: var(--navy-2);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 49;
-  }
-
-  .main-nav ul.show {
-    display: flex;
-  }
-
-  .main-nav li {
-    margin: 10px 0;
-    text-align: center;
-  }
-}
-/* Make header use space-between for logo and menu toggle */
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Hamburger button for mobile */
-.nav-toggle {
-  display: none; /* hidden on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -846,7 +776,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   transform: translateY(4px);
 }
 
-/* Show only on mobile */
+/* Mobile menu */
 @media (max-width: 760px) {
   .nav-toggle {
     display: flex;
@@ -855,11 +785,13 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   .main-nav ul {
     display: none;
     flex-direction: column;
+    align-items: center;  /* center items horizontally */
     background-color: var(--navy-2);
     position: absolute;
-    top: 70px;  /* adjust based on header height */
+    top: 60px;  /* adjust based on header height */
     left: 0;
     width: 100%;
+    margin: 0;
     padding: 10px 0;
     z-index: 49;
   }
@@ -869,9 +801,8 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   }
 
   .main-nav li {
-    margin: 10px 0;
+    margin: 10px 0;  /* small vertical spacing */
+    width: 100%;     /* take full width for easier tap */
     text-align: center;
   }
 }
-
-
