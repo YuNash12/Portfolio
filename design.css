@@ -104,8 +104,16 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   align-items:center;
 }
 
+
+
 /* grid with left content + right portrait */
 .hero-grid{ display:grid; grid-template-columns: 1fr 420px; gap:48px; align-items:center; }
+
+.portrait:hover {
+  box-shadow: 0 0 40px 6px #00c07a, 0 0 80px 12px rgba(0,192,122,0.4);
+  transform: scale(1.02);
+  transition: all 0.35s ease;
+}
 
 /* Left column styles */
 .hero-left{ max-width:680px; }
@@ -242,8 +250,8 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   color: #d9e9f9 !important;
 }
 .logo img {
-  height: 50px; /* adjust this to whatever works best */
-  width: auto;   /* keeps the aspect ratio correct *
+  height: 50px; 
+  width: auto;
 }
 .logo-container {
   display: flex;
@@ -252,7 +260,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 .logo-img {
-  height: 50px; /* same as before */
+  height: 50px; 
   width: auto;
 }
 
@@ -282,8 +290,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 /* Portfolio Grid */
-/* Portfolio Grid - fixed 2x2 layout */
-/* ---- Portfolio: fixed 2x2 on desktop; stacked on small screens ---- */
 
 .portfolio-grid {
   display: grid;
@@ -292,14 +298,14 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   gap: 40px;
 }
 
-/* Each card - parent container for the image wrapper */
+
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  height: 400px;                   /* desktop height */
+  height: 400px;                  
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
-  background: #0b1620;             /* fallback background while image loads */
+  background: #0b1620;            
 }
 .project-card {
   position: relative;
@@ -311,14 +317,12 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   outline: none;
 }
 
-/* Make the image wrapper fill the card exactly */
 .project-image-wrap {
   position: absolute;
-  inset: 0;                         /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;                        
   display: block;
 }
 
-/* Image fills the wrapper and always covers the area */
 .project-image-wrap img {
   width: 100%;
   height: 100%;
@@ -382,7 +386,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   transition: max-height 0.35s ease, opacity 0.35s ease;
 }
 
-/* expansion on hover */
 .project-card:hover .project-caption,
 .project-card:focus-within .project-caption {
   height: 140px;
@@ -406,8 +409,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   margin: 36px 0 28px;
 }
 
-/* Layout: three cards with thick separators between them */
-/* grid columns: card - separator - card - separator - card */
 .resume-row {
   display: grid;
   grid-template-columns: 1fr 1in 1fr 1in 1fr;
@@ -660,14 +661,12 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   transition: transform 0.3s ease;
 }
 
-/* Animate line when input is focused */
 .contact-form input:focus::after,
 .contact-form textarea:focus::after {
   transform: scaleX(1);
   animation: pulseLine 1.5s infinite;
 }
 
-/* Pulse animation */
 @keyframes pulseLine {
   0%, 100% {
     opacity: 0.4;
@@ -677,7 +676,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 760px) {
   .contact-form {
     gap: 18px;
@@ -715,19 +713,18 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     width: 52px;
     height: 52px;
   }
-  /* Move year bubbles further up and left */
+
 .year-bubble {
-  top: -28px;      /* move up */
-  left: 10px;      /* move left */
-  width: 56px;     /* keep size same */
+  top: -28px;      
+  left: 10px;      
+  width: 56px;    
   height: 56px;
 }
 
-/* Optional: adjust on mobile for smaller screens */
 @media (max-width: 760px) {
   .year-bubble {
-    top: -20px;     /* slightly less up on very small screens */
-    left: 8px;      /* slightly less left */
+    top: -20px;     
+    left: 8px;      
     width: 50px;
     height: 50px;
   }
@@ -737,7 +734,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   .resume-title { font-size: 2.6rem; }
 }
 
-/* Very narrow phones: tighten spacing */
+
 @media (max-width: 480px) {
   .resume-title { font-size: 2.2rem; margin-top: 18px; }
   .resume-card { padding: 18px; min-height: 180px; }
@@ -745,31 +742,31 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 
-/* ---- Responsive: one column & slightly shorter cards on small screens ---- */
+
 @media (max-width: 900px) {
   .portfolio-grid {
-    grid-template-columns: 1fr;   /* stack to single column */
+    grid-template-columns: 1fr;  
     grid-template-rows: auto;
     gap: 24px;
   }
 
   .project-card {
-    height: 300px;               /* reduce height for mobile */
+    height: 300px;          
   }
 
   .portfolio-title { font-size: 2.4rem; }
   .portfolio-subtitle { font-size: 1rem; margin-bottom: 24px; }
 }
 @media (max-width: 480px) {
-  .screenshot { height: 140px; } /* or adjust aspect-ratio */
+  .screenshot { height: 140px; } 
 }
 
 
 .header {
   display: flex;
-  justify-content: space-between; /* space between name and nav */
-  align-items: center;           /* vertical center */
-  padding: 0 20px;               /* horizontal padding */
+  justify-content: space-between;
+  align-items: center;         
+  padding: 0 20px;              
   position: relative;
 }
 
@@ -780,10 +777,10 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   width: 28px;
   height: 22px;
   cursor: pointer;
-  z-index: 50; /* stay on top of other elements */
+  z-index: 50; 
 }
 
-/* Optional: add a little margin so it’s not too close to the name */
+
 .nav-toggle {
   margin-left: 20px;
 }
