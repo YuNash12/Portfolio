@@ -1,25 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact Me</title>
-  <!-- Bootstrap CSS (CDN) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="design.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Yusuf Nashif</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">Yusuf Nashif</div>
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <img src="logo.jpg" class="logo-img" alt="Yusuf Nashif">
+        <span class="logo-text">Yusuf Nashif</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="container">
+      <h1 class="contact-title">CONTACT</h1>
+
+      <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="John Doe">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Sample@example.com">
+
+        <label for="comment">Comment</label>
+        <textarea id="comment" placeholder="Write your comment here"></textarea>
+
+        <button type="submit" class="cta">Submit</button>
+      </form>
+
+      <div class="pulse-line-container">
+        <div class="pulse-line"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

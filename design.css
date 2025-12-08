@@ -1,4 +1,4 @@
-/* design.css - updated to center content and match the screenshot look */
+
 
 /* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,6 +33,67 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 .main-nav ul{ list-style:none; display:flex; gap:28px; align-items:center; margin:0; padding:0; }
 .main-nav a{ color:var(--muted); text-decoration:none; font-weight:600; font-size:0.95rem; padding:8px 10px; border-radius:6px; }
 .main-nav a:hover, .main-nav a.active{ color:var(--white); }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* keeps spacing between logo and name */
+  text-decoration: none; /* remove underline */
+  color: var(--accent);  /* ensure text stays green */
+}
+/* Nav link base style */
+.main-nav a {
+  color: var(--muted); /* existing color */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect: glow + underline */
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--white); /* text turns white */
+}
+
+/* Add a pulsing underline on hover */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00c07a, #00d28c, #00c07a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Only apply pulse underline on hover */
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  animation: pulseUnderline 1.5s infinite;
+}
+
+.name {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 3.4rem;
+  letter-spacing: 1px;
+  line-height: 1;
+  font-family: "Courier New", monospace; /* binary vibe */
+}
+
+
+/* Keyframe for pulsing effect */
+@keyframes pulseUnderline {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
 
 /* HERO */
 .hero{
@@ -467,6 +528,152 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   font-weight: 700;
   margin-right: 6px;
 }
+
+/* ---------------------- */
+/* CONTACT PAGE STYLING - TECH/CYBER THEME */
+/* ---------------------- */
+
+.contact-title {
+  text-align: center;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-shadow: 0 0 6px rgba(0,192,122,0.6); /* subtle green glow */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 24px;
+  background-color: #041724; /* dark panel behind form */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,192,122,0.25); /* soft green glow */
+}
+
+.contact-form label {
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 2px solid #00c07a;
+  background-color: #06223A;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a0a0a0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0,192,122,0.8), 0 0 15px rgba(0,192,122,0.4) inset;
+  background-color: #0b1a2a;
+}
+
+.contact-form .cta {
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-weight: 800;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--accent);
+  color: #052028;
+  box-shadow: 0 10px 30px rgba(0,192,122,0.12);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contact-form .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0,192,122,0.8), 0 0 35px rgba(0,192,122,0.4) inset;
+  background: #00d28c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 760px) {
+  .contact-form {
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form .cta {
+    padding: 10px 18px;
+  }
+}
+/* Pulsing green underline animation for inputs/textarea */
+.contact-form input,
+.contact-form textarea {
+  position: relative;
+  background-color: #06223A;
+}
+
+.contact-form input::after,
+.contact-form textarea::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #00c07a, #00d28c, #00c07a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Animate line when input is focused */
+.contact-form input:focus::after,
+.contact-form textarea:focus::after {
+  transform: scaleX(1);
+  animation: pulseLine 1.5s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseLine {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 760px) {
+  .contact-form {
+    gap: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form .cta {
+    padding: 10px 18px;
+  }
+}
+
 
 /* Responsive behavior: stack cards and hide separators on small screens */
 @media (max-width: 980px) {

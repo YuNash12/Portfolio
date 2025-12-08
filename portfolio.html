@@ -1,16 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Yusuf Nashif</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="design.css" />
+  <link rel="stylesheet" href="design.css">
 </head>
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">Yusuf Nashif</div>
+    <a href="index.html" class="logo-container">
+      <img src="logo.jpg" class="logo-img" alt="Yusuf Nashif">
+      <span class="logo-text">Yusuf Nashif</span>
+    </a>
+
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -23,7 +28,7 @@
   </div>
 </header>
 
- <main class="portfolio">
+<main class="portfolio">
   <div class="container">
     <!-- Page Title -->
     <h1 class="portfolio-title">PORTFOLIO</h1>
@@ -31,30 +36,30 @@
 
     <!-- Portfolio Grid -->
     <div class="portfolio-grid">
-<div class="project-card" tabindex="0">
-  <div class="project-image-wrap">
-    <img src="privacydiagram.jpg" alt="Privacy Diagram">
-    <div class="project-caption">
-      <div class="caption-inner">
-        <div class="caption-title">Consolidated Privacy Diagram</div>
-        <div class="caption-desc">Created a Consolidated Privacy Diagram by interviewing various individuals about their day-to-day technology usage.</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="project-card" tabindex="0">
-  <div class="project-image-wrap">
-    <img src="wireshark.jpg" alt="WireShark">
-    <div class="project-caption">
-      <div class="caption-inner">
-        <div class="caption-title">WireShark</div>
-        <div class="caption-desc">Used WireShark to capture and analyze network packets, identify suspicious traffic patterns, and validate filtering rules for secure network monitoring.</div>
+      <div class="project-card" tabindex="0">
+        <div class="project-image-wrap">
+          <img src="privacydiagram.jpg" alt="Privacy Diagram">
+          <div class="project-caption">
+            <div class="caption-inner">
+              <div class="caption-title">Consolidated Privacy Diagram</div>
+              <div class="caption-desc">Created a Consolidated Privacy Diagram by interviewing various individuals about their day-to-day technology usage.</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
+      <div class="project-card" tabindex="0">
+        <div class="project-image-wrap">
+          <img src="wireshark.jpg" alt="WireShark">
+          <div class="project-caption">
+            <div class="caption-inner">
+              <div class="caption-title">WireShark</div>
+              <div class="caption-desc">Used WireShark to capture and analyze network packets, identify suspicious traffic patterns, and validate filtering rules for secure network monitoring.</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="project-card" tabindex="0">
         <div class="project-image-wrap">
@@ -62,10 +67,9 @@
           <div class="project-caption">
             <div class="caption-inner">
               <div class="caption-title">AI & Misinformation Research</div>
-              <div class="caption-desc">Produced a Research Paper regarding AI & its effects on Social Media
-              </div>
-              </div>
+              <div class="caption-desc">Produced a research paper regarding AI & its effects on Social Media.</div>
             </div>
+          </div>
         </div>
       </div>
 
@@ -75,9 +79,25 @@
           <div class="project-caption">
             <div class="caption-inner">
               <div class="caption-title">VR & Schizophrenia Research</div>
-              <div class="caption-desc">Produced a Research Paper regarding Virtual Reality and Its effects on Schizophrenia
-              </div>
-              </div>
+              <div class="caption-desc">Produced a research paper regarding Virtual Reality and its effects on Schizophrenia.</div>
             </div>
+          </div>
         </div>
       </div>
+
+    </div> <!-- end portfolio-grid -->
+  </div> <!-- end container -->
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Yusuf Nashif</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

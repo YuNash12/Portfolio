@@ -1,16 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume — Yusuf Nashif</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="design.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
 </head>
 <body>
- <header class="site-header">
+
+<header class="site-header">
   <div class="container header-inner">
-    <div class="logo">Yusuf Nashif</div>
+    <a href="index.html" class="logo-container">
+      <img src="logo.jpg" class="logo-img" alt="Yusuf Nashif">
+      <span class="logo-text">Yusuf Nashif</span>
+    </a>
+
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -23,19 +28,19 @@
   </div>
 </header>
 
-  <main class="resume-section">
+<main class="resume-section">
   <div class="container">
     <h1 class="resume-title">RESUME</h1>
 
     <!-- Row with three cards + thick separators -->
-    <div class="resume-row" role="list">
+    <div class="resume-row">
 
       <!-- CARD 1 -->
-      <article class="resume-card" role="listitem" aria-labelledby="job-1-title">
+      <article class="resume-card">
         <div class="year-bubble" aria-hidden="true"><span>2025</span></div>
 
         <div class="card-content">
-          <div class="job-title" id="job-1-title">Customer Care Intern</div>
+          <h2 class="job-title">Customer Care Intern</h2>
           <div class="employer">TechSmith Corporation</div>
 
           <ul class="resume-bullets">
@@ -45,15 +50,14 @@
         </div>
       </article>
 
-      <!-- SEPARATOR -->
       <div class="resume-sep" aria-hidden="true"></div>
 
       <!-- CARD 2 -->
-      <article class="resume-card" role="listitem" aria-labelledby="job-2-title">
+      <article class="resume-card">
         <div class="year-bubble" aria-hidden="true"><span>2025</span></div>
 
         <div class="card-content">
-          <div class="job-title" id="job-2-title">Resident Assistant</div>
+          <h2 class="job-title">Resident Assistant</h2>
           <div class="employer">Michigan State University</div>
 
           <ul class="resume-bullets">
@@ -63,15 +67,14 @@
         </div>
       </article>
 
-      <!-- SEPARATOR -->
       <div class="resume-sep" aria-hidden="true"></div>
 
       <!-- CARD 3 -->
-      <article class="resume-card" role="listitem" aria-labelledby="job-3-title">
+      <article class="resume-card">
         <div class="year-bubble" aria-hidden="true"><span>2021</span></div>
 
         <div class="card-content">
-          <div class="job-title" id="job-3-title">IT Intern</div>
+          <h2 class="job-title">IT Intern</h2>
           <div class="employer">Hamilton Township School District</div>
 
           <ul class="resume-bullets">
@@ -80,29 +83,28 @@
           </ul>
         </div>
       </article>
-    </div>
 
-    <!-- Skills long rounded rectangle -->
-    <section class="skills-card" aria-labelledby="skills-title">
-      <div class="skills-inner">
-        <div class="skills-title" id="skills-title">Skills</div>
+    </div> <!-- end resume-row -->
 
-        <p class="skills-line"><span class="skills-label">Languages</span>: <span class="skills-list">JavaScript, Java, Visual Basic, HTML, Python</span></p>
+    <!-- Skills section -->
+    <section class="skills-card">
+      <h2 class="skills-title">Skills</h2>
 
-        <p class="skills-line"><span class="skills-label">Applications</span>: <span class="skills-list">Git, GitHub, Wireshark, Power BI, ZenDesk, Corp, FastSpring, PhraseExpress, Excel, Thinkst Canary, Slack</span></p>
-
-        <p class="skills-line"><span class="skills-label">Methods/Concepts</span>: <span class="skills-list">Technical Documentation, Detailed Incident Response, Customer Support, Version Control, Data Cleaning and Analysis</span></p>
-      </div>
+      <p class="skills-line"><strong>Languages:</strong> JavaScript, Java, Visual Basic, HTML, Python</p>
+      <p class="skills-line"><strong>Applications:</strong> Git, GitHub, Wireshark, Power BI, ZenDesk, Corp, FastSpring, PhraseExpress, Excel, Thinkst Canary, Slack</p>
+      <p class="skills-line"><strong>Methods/Concepts:</strong> Technical Documentation, Detailed Incident Response, Customer Support, Version Control, Data Cleaning and Analysis</p>
     </section>
 
   </div>
 </main>
 
+<footer class="site-footer">
+  <div class="container"><p>&copy; <span id="year"></span> Yusuf Nashif</p></div>
+</footer>
 
-  <footer class="site-footer">
-    <div class="container"><p>&copy; <span id="year3"></span> Yusuf Nashif</p></div>
-  </footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
 </body>
 </html>
