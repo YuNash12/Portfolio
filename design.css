@@ -1,5 +1,3 @@
-
-
 /* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; background: #03141b; color: #e6f0ff; }
@@ -104,8 +102,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   align-items:center;
 }
 
-
-
 /* grid with left content + right portrait */
 .hero-grid{ display:grid; grid-template-columns: 1fr 420px; gap:48px; align-items:center; }
 
@@ -139,7 +135,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 
 /* Footer */
 .site-footer{ padding:18px 0; color:var(--muted); background:transparent; text-align:left; margin-top:40px; }
-
 
 /* Responsive adjustments */
 @media (max-width:1100px){
@@ -298,7 +293,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   gap: 40px;
 }
 
-
 .project-card {
   position: relative;
   overflow: hidden;
@@ -306,14 +300,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   height: 400px;                  
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
   background: #0b1620;            
-}
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  height: 400px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
-  background: #0b1620;
   outline: none;
 }
 
@@ -428,7 +414,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   box-shadow: 0 0 10px #00c07a, 0 0 18px #00c07a;
 }
 
-
 /* Individual "circled rectangle" card */
 .resume-card {
   background: linear-gradient(180deg, rgba(6,34,52,0.9), rgba(4,23,36,0.8));
@@ -512,7 +497,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 .btn-resume:hover {
   opacity: 0.85;
 }
-
 
 /* Skills long rounded rectangle */
 .skills-card {
@@ -624,22 +608,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   background: #00d28c;
 }
 
-/* Responsive adjustments */
-@media (max-width: 760px) {
-  .contact-form {
-    gap: 18px;
-    padding: 24px 20px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.95rem;
-  }
-
-  .contact-form .cta {
-    padding: 10px 18px;
-  }
-}
 /* Pulsing green underline animation for inputs/textarea */
 .contact-form input,
 .contact-form textarea {
@@ -676,9 +644,11 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   }
 }
 
+/* Responsive adjustments for contact form */
 @media (max-width: 760px) {
   .contact-form {
     gap: 18px;
+    padding: 24px 20px;
   }
 
   .contact-form input,
@@ -690,7 +660,6 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     padding: 10px 18px;
   }
 }
-
 
 /* Responsive behavior: stack cards and hide separators on small screens */
 @media (max-width: 980px) {
@@ -707,20 +676,18 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     padding: 20px;
   }
 
+  /* mobile adjustments for year bubbles */
   .year-bubble {
-    top: -16px;
-    left: 14px;
-    width: 52px;
-    height: 52px;
+    top: -28px;      
+    left: 10px;      
+    width: 56px;    
+    height: 56px;
   }
 
-.year-bubble {
-  top: -28px;      
-  left: 10px;      
-  width: 56px;    
-  height: 56px;
+  .resume-title { font-size: 2.6rem; }
 }
 
+/* slightly different small-screen tweak */
 @media (max-width: 760px) {
   .year-bubble {
     top: -20px;     
@@ -730,19 +697,14 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   }
 }
 
-
-  .resume-title { font-size: 2.6rem; }
-}
-
-
+/* Very narrow phones: tighten spacing */
 @media (max-width: 480px) {
   .resume-title { font-size: 2.2rem; margin-top: 18px; }
   .resume-card { padding: 18px; min-height: 180px; }
   .skills-line { font-size: 0.95rem; }
 }
 
-
-
+/* ---- Responsive: one column & slightly shorter cards on small screens ---- */
 @media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: 1fr;  
@@ -761,7 +723,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   .screenshot { height: 140px; } 
 }
 
-
+/* Header small layout helpers */
 .header {
   display: flex;
   justify-content: space-between;
@@ -770,6 +732,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   position: relative;
 }
 
+/* Hamburger button base (hidden on desktop) */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -778,9 +741,49 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   height: 22px;
   cursor: pointer;
   z-index: 50; 
+  margin-left: 20px;
 }
 
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: flex;
+  }
 
-.nav-toggle {
-  margin-left: 20px;
+  .nav-toggle .hamburger,
+  .nav-toggle .hamburger::before,
+  .nav-toggle .hamburger::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle .hamburger::before { transform: translateY(-7px); }
+  .nav-toggle .hamburger::after { transform: translateY(4px); }
+
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;  /* center items horizontally */
+    background-color: var(--navy-2);
+    position: absolute;
+    top: 60px;  /* adjust based on header height */
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 49;
+  }
+
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  .main-nav li {
+    margin: 10px 0;  /* small vertical spacing */
+    width: 100%;     /* take full width for easier tap */
+    text-align: center;
+  }
 }
