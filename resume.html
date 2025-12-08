@@ -15,6 +15,9 @@
       <img src="logo.jpg" class="logo-img" alt="Yusuf Nashif">
       <span class="logo-text">Yusuf Nashif</span>
     </a>
+<button class="nav-toggle" aria-label="Toggle navigation">
+  <span class="hamburger"></span>
+</button>
 
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
@@ -107,6 +110,13 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.main-nav ul');
 
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+</script>
 </body>
 </html>
