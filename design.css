@@ -765,7 +765,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 /* Hamburger button */
 .nav-toggle {
-  display: none;
+  display: none; /* hide by default on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -773,6 +773,8 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 50; /* stay on top of other elements */
+  margin-left: 20px; /* optional spacing */
 }
 
 .nav-toggle .hamburger,
@@ -797,7 +799,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 /* Mobile menu */
 @media (max-width: 760px) {
   .nav-toggle {
-    display: flex;
+    display: flex; /* show hamburger on mobile */
   }
 
   .main-nav ul {
@@ -824,6 +826,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     text-align: center;
   }
 }
+
 .header {
   display: flex;
   justify-content: space-between; /* space between name and nav */
