@@ -749,11 +749,11 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     display: flex;
   }
 
-  .nav-toggle .hamburger,
-  .nav-toggle .hamburger::before,
-  .nav-toggle .hamburger::after {
+  .nav-toggle,
+  .nav-toggle,
+  .nav-toggle {
     content: '';
-    display: none;
+    display: block;
     height: 3px;
     background-color: var(--accent);
     border-radius: 2px;
