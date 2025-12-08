@@ -715,6 +715,24 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     width: 52px;
     height: 52px;
   }
+  /* Move year bubbles further up and left */
+.year-bubble {
+  top: -28px;      /* move up */
+  left: 10px;      /* move left */
+  width: 56px;     /* keep size same */
+  height: 56px;
+}
+
+/* Optional: adjust on mobile for smaller screens */
+@media (max-width: 760px) {
+  .year-bubble {
+    top: -20px;     /* slightly less up on very small screens */
+    left: 8px;      /* slightly less left */
+    width: 50px;
+    height: 50px;
+  }
+}
+
 
   .resume-title { font-size: 2.6rem; }
 }
