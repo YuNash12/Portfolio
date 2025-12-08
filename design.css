@@ -140,27 +140,14 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
   .name{ font-size:2.8rem; }
 }
 
-@media (max-width: 760px) {
-  .main-nav ul {
-    display: flex !important;           /* force it to show */
-    flex-direction: column;             /* stack vertically */
-    gap: 12px;                          /* spacing between links */
-    align-items: flex-start;            /* left-align links */
-    background-color: var(--navy-2);   /* optional background */
-    position: relative;                 /* normal flow */
-    width: 100%;                        /* take full width */
-    margin: 12px 0;                     /* spacing below header */
-    padding: 10px 0;
-  }
-
-  .main-nav li {
-    width: 100%;
-  }
-
-  .main-nav a {
-    display: block;                     /* make the link full width */
-    padding: 10px 16px;
-  }
+@media (max-width:760px){
+  .container{ padding-left:20px; padding-right:20px; }
+  .hero-grid{ grid-template-columns: 1fr; gap:18px; }
+  .hero-right{ order: -1; justify-content:flex-end; margin-bottom:12px; }
+  .portrait{ max-width:300px; }
+  .name{ font-size:2.2rem; }
+  .role{ letter-spacing:1.5px; }
+  .main-nav ul{ display:none; } /* you can add a mobile menu later */
 }
 
 /* Respect reduced motion */
