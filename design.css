@@ -806,3 +806,25 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
     text-align: center;
   }
 }
+.header {
+  display: flex;
+  justify-content: space-between; /* space between name and nav */
+  align-items: center;           /* vertical center */
+  padding: 0 20px;               /* horizontal padding */
+  position: relative;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 50; /* stay on top of other elements */
+}
+
+/* Optional: add a little margin so it’s not too close to the name */
+.nav-toggle {
+  margin-left: 20px;
+}
