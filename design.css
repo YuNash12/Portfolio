@@ -833,7 +833,7 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 .nav-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
