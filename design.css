@@ -141,19 +141,14 @@ html, body { height: 100%; font-family: Inter, system-ui, -apple-system, "Segoe 
 }
 
 @media (max-width:760px){
-  .main-nav ul{
-    display: flex;         /* show nav */
-    flex-direction: column; /* stack vertically */
-    gap: 12px;              /* spacing between links */
-    align-items: flex-start; /* optional, left-align links */
-  }
-
-  .main-nav li {
-    width: 100%;           /* full width for easier tap */
-    text-align: left;      /* optional */
-  }
+  .container{ padding-left:20px; padding-right:20px; }
+  .hero-grid{ grid-template-columns: 1fr; gap:18px; }
+  .hero-right{ order: -1; justify-content:flex-end; margin-bottom:12px; }
+  .portrait{ max-width:300px; }
+  .name{ font-size:2.2rem; }
+  .role{ letter-spacing:1.5px; }
+  .main-nav ul{ display:none; } /* you can add a mobile menu later */
 }
-
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
